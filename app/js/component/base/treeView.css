@@ -1,0 +1,35 @@
+.treeNode
+{
+    user-select: none;
+    cursor: pointer;
+}
+
+.treeNode .container
+{
+    /* margin-left: 10px; */
+    padding: 0px 0px 0px 10px;
+}
+
+.treeNode .summary
+{
+    cursor: pointer;
+    padding: 6px;
+    /* display: block; */
+}
+
+.treeNode.summary.selected
+{
+    background-color: orange;
+}
+
+/* .treeNode div
+{
+    padding: 6px;
+    padding-left: 20px;
+    cursor: pointer;
+} */
+
+.treeNode div.selected
+{
+    background-color: orange;
+}
