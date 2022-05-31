@@ -1,0 +1,39 @@
+.tripleListComponent.flex
+{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.tripleListComponent .twinSplitBox
+{
+    display: flex;
+    align-items: stretch;
+    flex-direction: row;
+    height: 100%;
+}
+
+.tripleListComponent .twinList
+{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.tripleListComponent .singleList
+{
+    flex: 1; 
+    height: 100%;
+    width: 50%;
+}
+
+.parentNodeListBox
+{
+    height: 100%;
+    width: 100%;
+}
+
+.a
+{
+    flex-grow: 1;
+}

@@ -42,8 +42,20 @@ class templateStore
         temp3.caption = "GHR";
         temp3.text = "TESt";
 
+        const temp4 = new template();
+        temp4.caption = "XYZ";
+        temp4.text = "XYZ";
+
+        const temp5 = new template();
+        temp5.caption = "GHJ";
+        temp5.text = "GHJ";
+
         temp.childNodes.push(temp2);
         temp2.childNodes.push(temp3);
+
+        temp4.childNodes.push(temp5);
+
+        temp2.childNodes.push(temp4);
 
         temp3.body = "aaaaiiii\nccccc\nbbbb";
 

@@ -1,0 +1,16 @@
+.splitter
+{
+    user-select: none;
+    width: 4px;
+    height: 100%;
+    cursor: ew-resize;
+}
+
+.splitter:focus
+{
+    user-select: none;
+    background-color: rgb(121, 179, 255);
+    width: 4px;
+    height: 100%;
+    cursor: ew-resize;
+}

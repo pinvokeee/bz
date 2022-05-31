@@ -69,7 +69,7 @@ const treeNodeComponent =
             {
                 this._isOpen = value;
             }
-        }
+        },        
     },
 
     methods:
@@ -89,19 +89,28 @@ const treeNodeComponent =
         {
             this.isOpen = !this.isOpen;
         },
+
+        getNodeIcon()
+        {
+            if (this.isExistsChild()) return "bi bi-caret-right-fill";
+            return "bi bi-file-earmark";            
+        }
     },
 
     template:`
         <div >
-            <div class="container">
-                <div :class="classObject" @click="sngClick" @dblclick="dblClick">{{body.caption}}</div>
+            <div class="mcontainer">
+                <div :class="classObject" @mousedown="sngClick" @dblclick="dblClick">
+                <span :class="getNodeIcon()"></span>
+                {{body.caption}}</div>
+
                 <template v-if="isExistsChild()">
-                <div v-show="isOpen">
-                    <template v-for="child in body.childNodes" :key="child.caption">
-                        <treeNode class="treeNode" :body="child" :parentNode="this" :onClickNode="onClickNode">
-                        </treeNode>
-                    </template> 
-                </div>
+                    <div v-show="isOpen">
+                        <template v-for="child in body.childNodes" :key="child.caption">
+                            <treeNode class="treeNode" :body="child" :parentNode="this" :onClickNode="onClickNode">
+                            </treeNode>
+                        </template> 
+                    </div>
                 </template>
             </div>
         </div>

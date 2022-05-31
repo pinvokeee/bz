@@ -1,20 +1,29 @@
+.treeView
+{
+    display: flex;
+    
+}
+
 .treeNode
 {
     user-select: none;
     cursor: pointer;
 }
 
-.treeNode .container
-{
-    /* margin-left: 10px; */
-    padding: 0px 0px 0px 10px;
+.treeNode .mcontainer
+{   
+    margin-left: 24px;
+}
+
+.list > div > .treeNode > .mcontainer
+{   
+    margin-left: 0px;
 }
 
 .treeNode .summary
 {
     cursor: pointer;
-    padding: 6px;
-    /* display: block; */
+    padding: 6px 6px 6px 6px;
 }
 
 .treeNode.summary.selected
@@ -22,14 +31,12 @@
     background-color: orange;
 }
 
-/* .treeNode div
-{
-    padding: 6px;
-    padding-left: 20px;
-    cursor: pointer;
-} */
-
 .treeNode div.selected
 {
     background-color: orange;
+}
+
+.breadcrumb
+{
+    margin-bottom: 0;
 }

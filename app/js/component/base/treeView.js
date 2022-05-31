@@ -3,6 +3,7 @@ const treeViewComponent =
     components:
     {
         "treeNode": treeNodeComponent,
+        "searchBox": searchBoxComponent
     },
 
     props:
@@ -64,7 +65,8 @@ const treeViewComponent =
     template:
     `
         <template v-if="nodes != null">
-            <div class="list">
+            <div>
+                <searchBox></searchBox>
                 <div v-for="node in nodes">
                     <treeNode class="treeNode" :body="node" :onClickNode="clickNode" :parentNode="node">
                         

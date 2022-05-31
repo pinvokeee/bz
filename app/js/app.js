@@ -20,7 +20,7 @@ const app =
 
     computed:
     {
-
+        
     },
 
     template:
