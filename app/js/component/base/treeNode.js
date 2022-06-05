@@ -98,7 +98,7 @@ const treeNodeComponent =
     },
 
     template:`
-        <div >
+        <div>
             <div class="mcontainer">
                 <div :class="classObject" @mousedown="sngClick" @dblclick="dblClick">
                 <span :class="getNodeIcon()"></span>

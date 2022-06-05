@@ -75,6 +75,133 @@ class templateStore
 
 
     }
+
+    
+    generateFromFiles = (files) =>
+    {
+        const dir = [];
+
+        for (const file of files)
+        {
+            const path = file.webkitRelativePath;
+            let last_dir = dir;
+
+            path.split("/").forEach((name, index) =>    
+            {
+                if (path.split("/").length - 1 > index)
+                {
+                    if (last_dir[name] == null) last_dir[name] = [];
+                    last_dir = last_dir[name];
+                }
+                else
+                {
+                    last_dir.push(name);
+                }
+            });
+        }
+
+        console.log(dir);
+    }
+
+    generateFromDirectory = async (dataTransferItems) =>
+    {
+        const files = dataTransferItems;
+
+        console.log(files);
+
+        const arr = [];
+
+        for (const f of files)
+        {
+            const entry = f.webkitGetAsEntry();   
+            console.log(entry);         
+            await this.createNodeFromEntry(entry, []);
+        }
+
+        console.log(arr);
+    }
+
+    createNodeFromEntry = async (entry, nodes) =>
+    {    
+        // const d_node = new template();
+        // d_node.caption = entry.name;
+
+        // window.requestFileSystem = window.requestFileSystem || window.webkitRequestFileSystem;
+        // window.directoryEntry = window.directoryEntry || window.webkitDirectoryEntry;        
+
+        // let dirReader = entry.createReader();
+        // let entries = [];
+      
+        // let getEntries = function() {
+        //   dirReader.readEntries(function(results) {
+        //     if (results.length) {
+        //       entries = entries.concat(toArray(results));
+        //       getEntries();
+        //     }
+        //   }, function(error) {
+        //       console.log(error);
+        //     /* handle error -- error is a FileError object */
+        //   });
+        // };
+      
+        // getEntries();
+        // return entries;
+      
+
+        // if (entry.isDirectory)
+        // {
+        //     console.log(entry);
+
+        //     entry.getDirectory("", {}, (e) =>
+        //     {
+        //         console.log(e);
+        //     }, (aa) => console.log(aa));
+
+        //     // const directoryReader = entry.createReader();
+
+        //     // directoryReader.readEntries(entries => 
+        //     // {
+        //     //     entries.forEach(e => console.log(e));
+        //     //     console.log(entries);
+        //     // }, (ee) => console.log(ee));
+
+        //     // const entries = await new Promise(resolve => 
+        //     // {
+        //     //     directoryReader.readEntries(entries => 
+        //     //     {
+        //     //         console.log(entries);
+        //     //       resolve(entries);
+        //     //       console.log(entries);
+        //     //     });
+        //     // });
+
+            
+      
+        // }
+
+        // console.log(info);
+
+        // info.getDirectory(info.fullPath, null, (e) =>
+        // {
+        //     console.log(e);
+        // });
+
+        // console.log()
+
+        // for (const dir of info.getDirectory())
+        // {
+        //     this.createNode(dir, d_node.childNodes);  
+        // }
+
+        // for (const file of info.getFile())
+        // {
+        //     const f_node = new template();
+        //     f_node.caption = file.name;
+        // }
+
+        //nodes.push(d_node);
+        //console.log(nodes);
+    }
 }
 
 class template
